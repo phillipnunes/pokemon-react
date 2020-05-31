@@ -1,0 +1,49 @@
+.CardItem {
+  background-image: url("../../assets/pokeball-white.png");
+  background-repeat: no-repeat;
+  background-size: 19rem;
+  background-position: 17rem 4rem;
+  background-blend-mode: soft-light;
+  background-color: var(--cyan);
+  max-width: 31rem;
+  width: 100%;
+  height: 17rem;
+  border-radius: 3rem;
+  padding: 2rem 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.CardItem__name {
+  font-size: 2.5rem;
+  color: var(--white);
+  text-transform: capitalize;
+  white-space: nowrap;
+  max-width: 14rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.CardItem__abilities {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.CardItem__abilities-item {
+  padding: 0.6rem 1.8rem;
+  border-radius: 1.5rem;
+  color: var(--white);
+  background-color: var(--light-cyan);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  white-space: nowrap;
+  max-width: 13rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.CardItem__image {
+  image-rendering: pixelated;
+  width: 20rem;
+  position: absolute;
+  right: -4rem;
+  bottom: -5rem;
+}

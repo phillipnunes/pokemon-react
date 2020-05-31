@@ -1,0 +1,14 @@
+.Cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  justify-items: center;
+  margin-top: 4rem;
+
+  @media screen and (min-width: 500px){
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (min-width: 900px){
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

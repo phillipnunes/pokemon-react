@@ -1,0 +1,14 @@
+@import 'colors';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 62.5%; /* 10px = 1rem */
+}
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+}
