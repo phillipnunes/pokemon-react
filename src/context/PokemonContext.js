@@ -97,7 +97,7 @@ function usePokemon() {
         param,
       });
 
-      const response = await handleApiMethod(param, searchType);
+      const response = await handleApiMethod(param.toLowerCase(), searchType);
 
       dispatch({
         type: "SET_POKEMONS",
