@@ -1,7 +1,7 @@
 import React from "react";
 import "./CardItem.scss";
 
-export default function CardItem({ dataItem }) {
+export default function CardItem({ dataItem, onClick }) {
   const { name, sprites, abilities } = dataItem;
 
   function getTwoFirstItems(array) {
@@ -17,11 +17,14 @@ export default function CardItem({ dataItem }) {
 
   return (
     <div className="CardItem">
-      <h1 className="CardItem__name">{name}</h1>
+      <h1 onClick={() => onClick(name)} className="CardItem__name">
+        {name}
+      </h1>
       <div className="CardItem__abilities">
         {abilities && getTwoFirstItems(abilities)}
       </div>
       <img
+        onClick={() => onClick(name)}
         className="CardItem__image"
         src={sprites && sprites.front_default}
         alt={name}

@@ -2,16 +2,19 @@ import { useReducer, useEffect, useState } from "react";
 import api from "../shared/apiHelper";
 import constate from "constate";
 import logger from "./Logger";
+import { filter } from "../shared/constants";
 
 const initialState = {
   request: {
+    pokemon: {},
     pokemons: [],
     loading: false,
+    error: null,
   },
 };
 
 function reducer(state, action) {
-  const { pokemons, param, type, error } = action;
+  const { pokemon, pokemons, param, type, error } = action;
   switch (type) {
     case "SET_POKEMONS_START":
       return {
@@ -19,6 +22,9 @@ function reducer(state, action) {
         request: {
           param,
           loading: true,
+          error: null,
+          pokemon: {},
+          pokemons: [],
         },
       };
     case "SET_POKEMONS_FAIL":
@@ -33,6 +39,7 @@ function reducer(state, action) {
       return {
         ...state,
         request: {
+          pokemon,
           pokemons,
           loading: false,
         },
@@ -51,13 +58,11 @@ function getIdFromUrl(url) {
 }
 
 async function handleApiMethod(param, searchType) {
-  if (searchType === "name_or_id") {
-    let array = [];
+  if (searchType === filter.byNameOrId) {
     const response = await api.getPokemonByNameOrId(param);
-    array.push(response.data);
-    return array;
+    return response.data;
   }
-  if (searchType === "ability") {
+  if (searchType === filter.byAbility) {
     const response = await api.getPokemonByAbility(param);
     if (response.data) {
       const { data } = response;
@@ -83,7 +88,7 @@ function usePokemon() {
   }, [state, setData]);
 
   const { request } = state;
-  const { pokemons, loading, error } = request;
+  const { pokemon, pokemons, loading, error } = request;
 
   async function setPokemons(param, searchType) {
     if (!param || !searchType) {
@@ -98,13 +103,14 @@ function usePokemon() {
       });
 
       const response = await handleApiMethod(param.toLowerCase(), searchType);
+      const propName =
+        searchType === filter.byNameOrId ? "pokemon" : "pokemons";
 
       dispatch({
         type: "SET_POKEMONS",
-        pokemons: response,
+        [propName]: response,
       });
     } catch (e) {
-      console.log(e);
       dispatch({
         type: "SET_POKEMONS_FAIL",
         error: e.response,
@@ -114,6 +120,7 @@ function usePokemon() {
 
   return {
     setPokemons,
+    pokemon,
     pokemons,
     loading,
     error,
