@@ -1,16 +1,13 @@
 import React from "react";
-import "./Cards.scss";
 import CardItem from "./CardItem";
+import "./Cards.scss";
 
-export default function Cards() {
+export default function Cards({ data }) {
   return (
     <div className="Cards">
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
-      <CardItem />
+      {data.map((pokemon) => {
+        return <CardItem key={pokemon.id} dataItem={pokemon} />;
+      })}
     </div>
   );
 }

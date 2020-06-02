@@ -1,21 +1,31 @@
 import React from "react";
 import "./CardItem.scss";
 
-export default function CardItem() {
-  return (
-    <>
-      <div className="CardItem">
-        <h1 className="CardItem__name">Bulbassaur</h1>
-        <div className="CardItem__abilities">
-          <div className="CardItem__abilities-item">Fire</div>
-          <div className="CardItem__abilities-item">Frozen</div>
+export default function CardItem({ dataItem }) {
+  const { name, sprites, abilities } = dataItem;
+
+  function getTwoFirstItems(array) {
+    return array.slice(0, 2).map((abilityItem) => {
+      const { ability } = abilityItem;
+      return (
+        <div key={ability.name} className="CardItem__abilities-item">
+          {ability.name}
         </div>
-        <img
-          className="CardItem__image"
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"
-          alt="Pokemon"
-        />
+      );
+    });
+  }
+
+  return (
+    <div className="CardItem">
+      <h1 className="CardItem__name">{name}</h1>
+      <div className="CardItem__abilities">
+        {abilities && getTwoFirstItems(abilities)}
       </div>
-    </>
+      <img
+        className="CardItem__image"
+        src={sprites && sprites.front_default}
+        alt={name}
+      />
+    </div>
   );
 }

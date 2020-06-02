@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "Application to search pokemon details (aka Pokedex)",
   "main": "server.js",
-  "engines": {
-    "node": "12.14.1"
-  },
   "scripts": {
     "start": "node server.js",
     "dev": "parcel $npm_package_parcel_entrypoints --open",
@@ -42,6 +39,8 @@
     "sass": "^1.26.7"
   },
   "dependencies": {
+    "axios": "^0.19.2",
+    "constate": "^2.0.0",
     "css-vars": "^2.2.0",
     "express": "^4.17.1",
     "parcel-bundler": "^1.12.4",
@@ -52,5 +51,20 @@
   },
   "parcel": {
     "entrypoints": "src/index.html"
+  },
+  "engines": {
+    "node": "12.14.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
