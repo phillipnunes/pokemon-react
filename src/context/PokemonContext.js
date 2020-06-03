@@ -91,6 +91,7 @@ function usePokemon() {
   const { pokemon, pokemons, loading, error } = request;
 
   async function setPokemons(param, searchType) {
+    console.log(param, searchType);
     if (!param || !searchType) {
       console.log("No param or search type informed");
       return;

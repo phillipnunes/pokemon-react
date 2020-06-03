@@ -9,22 +9,26 @@ export default function CardItem({ dataItem, onClick }) {
       const { ability } = abilityItem;
       return (
         <div key={ability.name} className="CardItem__abilities-item">
-          {ability.name}
+          {formatAbility(ability.name)}
         </div>
       );
     });
   }
 
+  function formatAbility(string) {
+    return string.replace(/-/g, " ");
+  }
+
   return (
     <div className="CardItem">
-      <h1 onClick={() => onClick(name)} className="CardItem__name">
+      <h1 onClick={() => onClick(dataItem)} className="CardItem__name">
         {name}
       </h1>
       <div className="CardItem__abilities">
         {abilities && getTwoFirstItems(abilities)}
       </div>
       <img
-        onClick={() => onClick(name)}
+        onClick={() => onClick(dataItem)}
         className="CardItem__image"
         src={sprites && sprites.front_default}
         alt={name}

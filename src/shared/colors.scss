@@ -6,6 +6,7 @@ $gray: #efeaea;
 $cyan: #49d0af;
 $light-cyan: #5fe2c8;
 $red: red;
+$green: green;
 
 $css-vars-use-native: true;
 
@@ -15,5 +16,6 @@ $css-vars-use-native: true;
         --gray: $gray,
         --cyan: $cyan,
         --light-cyan: $light-cyan,
-        --red: $red
+        --red: $red,
+        --green: $green
 ));

@@ -3,6 +3,8 @@
   height: 100%;
   background-color: var(--cyan);
   padding: 5rem 1.5rem 0;
+  display: flex;
+  flex-direction: column;
 }
 .Pokemon__container {
   display: flex;
@@ -11,11 +13,13 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
+  z-index: 1;
 }
 .Pokemon__name {
   font-size: 3.2rem;
   font-weight: 500;
   color: var(--white);
+  text-transform: capitalize;
 }
 .Pokemon__abilities {
   display: flex;
@@ -33,6 +37,7 @@
   max-width: 13rem;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-transform: capitalize;
 }
 .Pokemon__image {
   image-rendering: pixelated;
@@ -46,7 +51,7 @@
   background-color: var(--white);
   width: 100%;
   height: 100%;
-  margin-top: -7rem;
+  margin-top: -10rem;
   border-radius: 3rem 3rem 0 0;
   padding: 2rem 2rem 0;
 }
@@ -59,16 +64,28 @@
   font-size: 1.6rem;
   color: var(--black);
   display: grid;
-  grid-template-columns: 8rem 4rem auto;
+  grid-template-columns: 16rem 4rem auto;
   align-items: center;
   margin-bottom: .8rem;
 }
 .Pokemon__details-content-name {
+  text-transform: capitalize;
   opacity: .5;
 }
 .Pokemon__details-content-progress {
   width: 100%;
   height: .3rem;
   border-radius: .3rem;
-  background-color: red;
+  display: flex;
+}
+.Pokemon__background {
+  position: fixed;
+  width: auto;
+  height: 35rem;
+  top: 16rem;
+  align-self: center;
+}
+.Pokemon__background--animated {
+  animation: spin 4s infinite linear;
+  filter: brightness(1.1);
 }
