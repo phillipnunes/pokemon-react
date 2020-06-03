@@ -51,12 +51,12 @@ export default function Pokemon() {
                 })}
             </div>
           </div>
-          <img
-            className="Pokemon__image"
-            src={content.sprites && content.sprites.front_default}
-            alt={content.name}
-          />
           <div className="Pokemon__details">
+            <img
+              className="Pokemon__details-image"
+              src={content.sprites && content.sprites.front_default}
+              alt={content.name}
+            />
             <h2 className="Pokemon__details-title">Base Stats</h2>
             {content.stats &&
               content.stats.map((item) => {
