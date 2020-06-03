@@ -1,5 +1,7 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import "./CardItem.scss";
+import { findAndReplace } from "../../shared/utils";
 
 export default function CardItem({ dataItem, onClick }) {
   const { name, sprites, abilities } = dataItem;
@@ -9,26 +11,19 @@ export default function CardItem({ dataItem, onClick }) {
       const { ability } = abilityItem;
       return (
         <div key={ability.name} className="CardItem__abilities-item">
-          {formatAbility(ability.name)}
+          {findAndReplace(ability.name, "-", " ")}
         </div>
       );
     });
   }
 
-  function formatAbility(string) {
-    return string.replace(/-/g, " ");
-  }
-
   return (
-    <div className="CardItem">
-      <h1 onClick={() => onClick(dataItem)} className="CardItem__name">
-        {name}
-      </h1>
+    <div onClick={() => onClick(dataItem)} className="CardItem">
+      <h1 className="CardItem__name">{name}</h1>
       <div className="CardItem__abilities">
         {abilities && getTwoFirstItems(abilities)}
       </div>
       <img
-        onClick={() => onClick(dataItem)}
         className="CardItem__image"
         src={sprites && sprites.front_default}
         alt={name}
@@ -36,3 +31,8 @@ export default function CardItem({ dataItem, onClick }) {
     </div>
   );
 }
+
+CardItem.propTypes = {
+  dataItem: PropTypes.object.isRequired,
+  onClick: PropTypes.func.isRequired,
+};

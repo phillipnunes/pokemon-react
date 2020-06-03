@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import { FaSearch } from "react-icons/fa";
 import "./Search.scss";
 
@@ -16,3 +17,8 @@ export default function Search({ onChange, placeholder }) {
     </div>
   );
 }
+
+Search.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};

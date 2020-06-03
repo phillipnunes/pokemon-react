@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 import CardItem from "./CardItem";
 import { useHistory } from "react-router-dom";
 import "./Cards.scss";
@@ -11,6 +12,7 @@ export default function Cards({ data }) {
       data: { cachedPokemon: pokemon, requestMissingData },
     });
   }
+
   return (
     <div className="Cards">
       {Array.isArray(data) ? (
@@ -31,3 +33,7 @@ export default function Cards({ data }) {
     </div>
   );
 }
+
+Cards.propTypes = {
+  data: PropTypes.any.isRequired,
+};

@@ -2,52 +2,9 @@ import { useReducer, useEffect, useState } from "react";
 import api from "../shared/apiHelper";
 import constate from "constate";
 import logger from "./Logger";
+import reducer from "./Reducer";
+import { initialState } from "./InitialState";
 import { filter } from "../shared/constants";
-
-const initialState = {
-  request: {
-    pokemon: {},
-    pokemons: [],
-    loading: false,
-    error: null,
-  },
-};
-
-function reducer(state, action) {
-  const { pokemon, pokemons, param, type, error } = action;
-  switch (type) {
-    case "SET_POKEMONS_START":
-      return {
-        ...state,
-        request: {
-          param,
-          loading: true,
-          error: null,
-          pokemon: {},
-          pokemons: [],
-        },
-      };
-    case "SET_POKEMONS_FAIL":
-      return {
-        ...state,
-        request: {
-          error,
-          loading: false,
-        },
-      };
-    case "SET_POKEMONS":
-      return {
-        ...state,
-        request: {
-          pokemon,
-          pokemons,
-          loading: false,
-        },
-      };
-    default:
-      return state;
-  }
-}
 
 const loggerReducer = logger(reducer);
 
@@ -91,7 +48,6 @@ function usePokemon() {
   const { pokemon, pokemons, loading, error } = request;
 
   async function setPokemons(param, searchType) {
-    console.log(param, searchType);
     if (!param || !searchType) {
       console.log("No param or search type informed");
       return;
