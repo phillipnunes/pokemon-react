@@ -1,11 +1,11 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { describe, expect, test } from "@jest/globals";
 import Search from "./Search";
 
 const mockFnc = jest.fn((value) => value);
 
-describe("App Component", () => {
+describe("Search Component", () => {
   test("renders placeholder text", () => {
     const wrapper = shallow(
       <Search onChange={() => null} placeholder="Placeholder text" />
@@ -14,7 +14,6 @@ describe("App Component", () => {
       "Placeholder text"
     );
   });
-
   test("return value on input change", () => {
     const event = {
       target: { value: "pikachu" },
