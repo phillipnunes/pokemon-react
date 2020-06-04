@@ -2,6 +2,8 @@
 
 An application used to search pokemons data from [Poke Api](https://pokeapi.co/), built with React, Hooks, JavaScript, SCSS and Jest/Enzyme.
 
+#####Preview: https://pokemon-react-phillip.herokuapp.com/
+
 ## :cloud: Project Screen Shot(s)
 
 #### Home page:
