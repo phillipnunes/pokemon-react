@@ -12,9 +12,9 @@
   padding: 2rem 2rem 0;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .CardItem__name {
-  cursor: pointer;
   font-size: 2.5rem;
   color: var(--white);
   text-transform: capitalize;
@@ -43,7 +43,6 @@
   text-transform: capitalize;
 }
 .CardItem__image {
-  cursor: pointer;
   image-rendering: pixelated;
   width: 20rem;
   position: absolute;

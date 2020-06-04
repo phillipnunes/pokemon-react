@@ -15,6 +15,16 @@
   margin: 0 auto;
   z-index: 1;
 }
+.Pokemon__header-container {
+  display: flex;
+  align-items: center;
+}
+.Pokemon__header-icon {
+  cursor: pointer;
+  font-size: 3rem;
+  margin-right: 3rem;
+  color: var(--white);
+}
 .Pokemon__name {
   font-size: 3.2rem;
   font-weight: 500;

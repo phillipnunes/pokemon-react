@@ -3,11 +3,10 @@ import { usePokemonContext } from "../../context/PokemonContext";
 import Search from "../Search/Search";
 import Cards from "../Cards/Cards";
 import { filter } from "../../shared/constants";
-import pokeball from "../../assets/pokeball.png";
 import FilterOptions from "../FilterOptions/FilterOptions";
 import { findAndReplace } from "../../shared/utils";
-import "./Home.scss";
 import BackgroundLoader from "../BackgroundLoader/BackgroundLoader";
+import "./Home.scss";
 
 export default function Home() {
   const [searchOption, setSearchOption] = useState(filter.byNameOrId);
