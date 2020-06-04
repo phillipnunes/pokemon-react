@@ -8,6 +8,7 @@ export default function Search({ onChange, placeholder }) {
     <div className="Search">
       <FaSearch className="Search__icon" />
       <input
+        id="search"
         placeholder={placeholder}
         className="Search__input"
         onChange={(event) => onChange && onChange(event.target.value)}
