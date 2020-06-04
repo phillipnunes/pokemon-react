@@ -58,7 +58,9 @@ export default function Home() {
         onChange={(value) => handleSearch(value)}
         placeholder={formatSearchPlaceholder()}
       />
-      {error && <p className="Home__message">Error searching. Try again.</p>}
+      {error && (
+        <p className="Home__message">No results were found. Try again.</p>
+      )}
       {hasData && <Cards data={pokemons || pokemon} />}
       <BackgroundLoader
         styles={{

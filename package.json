@@ -67,7 +67,9 @@
   "keywords": [
     "react",
     "scss",
-    "react-hooks"
+    "react-hooks",
+    "jest",
+    "enzyme"
   ],
   "author": "Phillip Nunes <phillipnunes86@gmail.com>",
   "license": "MIT",
