@@ -5,8 +5,9 @@ import Cards from "../Cards/Cards";
 import { filter } from "../../shared/constants";
 import pokeball from "../../assets/pokeball.png";
 import FilterOptions from "../FilterOptions/FilterOptions";
-import "./Home.scss";
 import { findAndReplace } from "../../shared/utils";
+import "./Home.scss";
+import BackgroundLoader from "../BackgroundLoader/BackgroundLoader";
 
 export default function Home() {
   const [searchOption, setSearchOption] = useState(filter.byNameOrId);
@@ -59,12 +60,14 @@ export default function Home() {
       />
       {error && <p className="Home__message">Error searching. Try again.</p>}
       {hasData && <Cards data={pokemons || pokemon} />}
-      <img
-        src={pokeball}
-        alt="Pokeball"
-        className={`Home__background ${
-          loading ? "Home__background--animated " : ""
-        }`}
+      <BackgroundLoader
+        styles={{
+          bottom: "5rem",
+          height: "23rem",
+          alignSelf: "flex-end",
+          zIndex: "-1",
+        }}
+        loading={loading}
       />
     </div>
   );

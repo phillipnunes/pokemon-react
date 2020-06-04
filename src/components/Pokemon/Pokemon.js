@@ -6,6 +6,7 @@ import PokemonAbilities from "./PokemonAbilities";
 import PokemonDetails from "./PokemonDetails";
 import { filter } from "../../shared/constants";
 import "./Pokemon.scss";
+import BackgroundLoader from "../BackgroundLoader/BackgroundLoader";
 
 export default function Pokemon() {
   const location = useLocation();
@@ -50,12 +51,13 @@ export default function Pokemon() {
           </div>
         </div>
       )}
-      <img
-        className={`Pokemon__background ${
-          loading ? "Pokemon__background--animated" : ""
-        }`}
-        src={pokeball}
-        alt="Pokeball"
+      <BackgroundLoader
+        styles={{
+          top: "16rem",
+          height: "32rem",
+          alignSelf: "center",
+        }}
+        loading={loading}
       />
     </div>
   );

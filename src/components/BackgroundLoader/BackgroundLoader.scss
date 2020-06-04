@@ -1,0 +1,14 @@
+.BackgroundLoader {
+  position: fixed;
+  width: auto;
+}
+
+.BackgroundLoader--animated {
+  animation: spin 4s infinite linear;
+  filter: brightness(1.1);
+}
+
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}

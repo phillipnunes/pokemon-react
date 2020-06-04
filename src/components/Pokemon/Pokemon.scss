@@ -96,14 +96,3 @@
   border-radius: .3rem;
   display: flex;
 }
-.Pokemon__background {
-  position: fixed;
-  width: auto;
-  height: 35rem;
-  top: 16rem;
-  align-self: center;
-}
-.Pokemon__background--animated {
-  animation: spin 4s infinite linear;
-  filter: brightness(1.1);
-}

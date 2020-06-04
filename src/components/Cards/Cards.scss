@@ -5,10 +5,10 @@
   justify-items: center;
   margin-top: 4rem;
 
-  @media screen and (min-width: 500px){
+  @media screen and (min-width: 31.250em){
     grid-template-columns: 1fr 1fr;
   }
-  @media screen and (min-width: 900px){
+  @media screen and (min-width: 56.250em){
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
