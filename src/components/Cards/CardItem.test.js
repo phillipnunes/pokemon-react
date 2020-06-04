@@ -6,7 +6,7 @@ import CardItem from "./CardItem";
 const mockFnc = jest.fn((value) => value);
 
 describe("CardItem Component", () => {
-  test("return data on click card", () => {
+  test("should return data on click card", () => {
     const dummyData = {
       what: "ever",
     };

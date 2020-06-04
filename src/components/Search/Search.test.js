@@ -6,7 +6,7 @@ import Search from "./Search";
 const mockFnc = jest.fn((value) => value);
 
 describe("Search Component", () => {
-  test("renders placeholder text", () => {
+  test("should render placeholder text", () => {
     const wrapper = shallow(
       <Search onChange={() => null} placeholder="Placeholder text" />
     );
@@ -14,7 +14,8 @@ describe("Search Component", () => {
       "Placeholder text"
     );
   });
-  test("return value on input change", () => {
+
+  test("should return value on input change", () => {
     const event = {
       target: { value: "pikachu" },
     };
