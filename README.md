@@ -2,9 +2,9 @@
 
 An application used to search pokemons data from [Poke Api](https://pokeapi.co/), built with React, Hooks, JavaScript, SCSS and Jest/Enzyme.
 
-#####Preview: https://pokemon-react-phillip.herokuapp.com/
+#### Preview: https://pokemon-react-phillip.herokuapp.com/
 
-## :cloud: Project Screen Shot(s)
+## :cloud: Screen Shots
 
 #### Home page:
 ![Home](https://i.ibb.co/th9VwhS/1.png)
@@ -37,8 +37,9 @@ Observations:
 
 There is a server.js file at the root of the project to run an express server in the hosting.
 
-Configurations from Parcel, Babel, Jest and eslint are stored in package.json. All in the same file makes it simple.  
+Configurations from Parcel, Babel, Jest and eslint are stored in package.json.  
 
 ## :rocket: Deploying on Heroku
 This app is built and hosted on [Heroku](https://www.heroku.com/) and the bundler/build process uses [Parcel](https://parceljs.org/).
+
 To configure and deploy on heroku, see the [official documentation](https://devcenter.heroku.com/).
