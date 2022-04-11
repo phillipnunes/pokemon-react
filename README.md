@@ -4,6 +4,8 @@ An application used to search pokemons data from [Poke Api](https://pokeapi.co/)
 
 #### Preview: https://pokemon-react-phillip.herokuapp.com/
 
+#### Design credits: https://dribbble.com/shots/6540871-Pokedex-App
+
 ## :cloud: Screen Shots
 
 #### Home page:
